@@ -1,40 +1,40 @@
-baseurl: /
-languageCode: zh-cn
+baseurl: https://example.com
+languageCode: en-us
 theme: hugo-theme-stack
 paginate: 5
-title: L1nSn0w's Blog
+title: Example Site
 
 languages:
-    # en:
-    #     languageName: English
-    #     title: Example Site
-    #     description: Example description
-    #     weight: 2
+    en:
+        languageName: English
+        title: Example Site
+        description: Example description
+        weight: 1
     zh-cn:
         languageName: 中文
-        title: L1nSn0w's Blog
+        title: 演示站点
         description: 演示说明
-        weight: 1
-    # ar:
-    #     languageName: عربي
-    #     languagedirection: rtl
-    #     title: موقع تجريبي
-    #     description: وصف تجريبي
-    #     weight: 3
+        weight: 2
+    ar:
+        languageName: عربي
+        languagedirection: rtl
+        title: موقع تجريبي
+        description: وصف تجريبي
+        weight: 3
 
 # Change it to your Disqus shortname before using
 disqusShortname: hugo-theme-stack
 
 # GA Tracking ID
-googleAnalytics: 
+googleAnalytics:
 
 # Theme i18n support
 # Available values: ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
-DefaultContentLanguage: zh-cn
+DefaultContentLanguage: en
 
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
-hasCJKLanguage: true
+hasCJKLanguage: false
 
 permalinks:
     post: /p/:slug/
@@ -45,11 +45,11 @@ params:
         - post
     featuredImageField: image
     rssFullContent: true
-    favicon: /img/favicon.ico # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
+    favicon:  # e.g.: favicon placed in `static/favicon.ico` of your site folder, then set this field to `/favicon.ico` (`/` is necessary)
 
     footer:
         since: 2020
-        customText: 
+        customText:
 
     dateFormat:
         published: Jan 02, 2006
@@ -57,7 +57,7 @@ params:
 
     sidebar:
         emoji: 🍥
-        subtitle: 无限进步.✍️
+        subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         avatar:
             enabled: true
             local: true
@@ -73,7 +73,7 @@ params:
 
     comments:
         enabled: true
-        provider: waline
+        provider: disqus
 
         disqusjs:
             shortname:
@@ -102,20 +102,21 @@ params:
 
         # Waline client configuration see: https://waline.js.org/en/reference/component.html
         waline:
-            serverURL: xxx
+            serverURL:
             lang:
-            pageview: true
+            pageview:
             emoji:
-                - https://cdn.jsdelivr.net/npm/sticker-heo@2022.7.5/Sticker-100/
+                - https://unpkg.com/@waline/emojis@1.0.1/weibo
             requiredMeta:
                 - name
                 - email
+                - url
             locale:
-                admin: 👻屑博主
-                placeholder: 🎉留下你的脚印.
+                admin: Admin
+                placeholder:
 
         twikoo:
-            envId: 
+            envId:
             region:
             path:
             lang:
@@ -152,7 +153,7 @@ params:
             - type: search
             - type: archives
               params:
-                  limit: 3
+                  limit: 5
             - type: categories
               params:
                   limit: 10
@@ -196,33 +197,17 @@ menu:
     main: []
 
     social:
-        - identifier: Travelling
-          name: aTravelling
-          url: https://travellings.link/
-          params:
-            newTab: false
-            icon: train  
-
-        - identifier: Wormhole
-          name: aWormhole
-          url: https://www.foreverblog.cn/go.html
-          params:
-            newTab: false
-            icon: wormhole  
-
-        - identifier: rss
-          name: cRSS
-          url: /index.xml
-          params:
-            newTab: true
-            icon: rss
-
         - identifier: github
-          name: dGitHub
-          url: https://github.com/lin-snow
+          name: GitHub
+          url: https://github.com/CaiJimmy/hugo-theme-stack
           params:
-            newTab: true
-            icon: brand-github
+              icon: brand-github
+
+        - identifier: twitter
+          name: Twitter
+          url: https://twitter.com
+          params:
+              icon: brand-twitter
 
 related:
     includeNewer: true
@@ -239,7 +224,7 @@ markup:
     goldmark:
         renderer:
             ## Set to true if you have HTML content inside Markdown
-            unsafe: true
+            unsafe: false
     tableOfContents:
         endLevel: 4
         ordered: true
